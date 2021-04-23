@@ -1,8 +1,28 @@
 {% extends "base.html" %}
 
+{% block styleContent %}
+<style>
+  p.danger{
+    color: red;
+  }
+
+  p.safe{
+    color: green;
+  }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="text-center">
   <img src="/plot.png" class="rounded" alt="Graph">
+</div>
+
+<div class="container" style="text-align: center; margin-top: 2%;">
+  {% if latest_temp > 50 : %}
+    <p class="danger">Fire Detected</p>
+  {% else: %}
+    <p class="safe">No Fire Detected</p>
+  {% endif %}
 </div>
 
 <div class="container" style="text-align: center; margin-top: 2%;">
