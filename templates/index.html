@@ -9,24 +9,146 @@
   p.safe{
     color: green;
   }
+  .flex-container{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .flex-container-graph-item{
+    flex-grow: 3;
+    /* border: 1px solid grey; */
+  }
+  .flex-container-table-item{
+    flex-grow: 1;
+    /* border: 1px solid grey; */
+    align-items: center;
+    padding: 10px;
+  }
+  .graph{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  table {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 30px auto;
+    }
+    
+  th, td {
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  .tools{
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid grey; */
+  }
+  .tools-item{
+    flex-grow: 1;
+    padding: 10px;
+  }
+  .img{
+    width: 60px;
+    padding: 10px;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="text-center">
-  <img src="/plot.png" class="rounded" alt="Graph">
+<div class="flex-container">
+  <div class="flex-container-graph-item">
+    <div class="tools">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        {% if fire > 50 : %}
+        <p class="danger">Fire Detected</p>
+        {% else: %}
+        <p class="safe">No Fire Detected</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="graph">
+      <canvas id= "lineChart" width="1000" height="400"></canvas>
+      <script>
+        var ctx = document.getElementById("lineChart").getContext("2d");
+        var linechart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: {{ labels | safe}},
+            datasets: [
+              {
+                label: "Temperature",
+                data: {{ temp_list | safe}},
+                lineTension: 0.3,
+                backgroundColor: "rgba(2,217,216,0.2)",
+                borderColor: "rgba(2,217,216,1)",
+                pointRadius: 5,
+                pointBackgroundColor: "rgba(2,217,216,1)",
+                pointBorderColor: "rgba(255,255,255,0.8)",
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(2,217,216,1)",
+                pointHitRadius: 20,
+                pointBorderWidth: 2,
+              },
+              {
+                label: "Humidity",
+                data: {{ humid_list | safe}},
+                lineTension: 0.3,
+                backgroundColor: "rgba(2,110,20,0.2)",
+                borderColor: "rgba(2,107,16,1)",
+                pointRadius: 5,
+                pointBackgroundColor: "rgba(2,107,16,1)",
+                pointBorderColor: "rgba(255,255,255,0.8)",
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(2,107,16,1)",
+                pointHitRadius: 20,
+                pointBorderWidth: 2,
+              }
+            ]
+          },
+          options: {
+            responsive: false,
+    
+            
+          }
+        });
+      </script>
+    </div>
+  </div>
+<div class="flex-container-table-item">
+  <h5>Data Examples</h5>
+  <table>
+    <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Tempreture</th>
+            <th>Humidity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(0,10): %}
+        <tr>
+            <td>{{ i+1 }}</td>
+            <td>{{ temp[(i)] }}</td>
+            <td>{{ humid[(i)] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 </div>
-
-<div class="container" style="text-align: center; margin-top: 2%;">
-  {% if latest_temp > 50 : %}
-    <p class="danger">Fire Detected</p>
-  {% else: %}
-    <p class="safe">No Fire Detected</p>
-  {% endif %}
-</div>
-
-<div class="container" style="text-align: center; margin-top: 2%;">
-  <p>Tempreture: {{ latest_temp }}</p>
-  <p>Humidity: {{ latest_humid }}</p>
 </div>
 {% endblock %}
