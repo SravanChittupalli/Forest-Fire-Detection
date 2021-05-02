@@ -27,8 +27,8 @@ def home():
     temp=[]
     humid=[]
     for i in info.items():
-        temp.append(i[1]["temp"])
-        humid.append(i[1]["humid"])
+        temp.append(i[1]["Temperature"])
+        humid.append(i[1]["Humidity"])
     return render_template("index.html", latest_temp = temp[-1], latest_humid = humid[-1])
     
 @app.route('/plot.png')
