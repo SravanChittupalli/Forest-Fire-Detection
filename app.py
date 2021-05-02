@@ -43,8 +43,8 @@ def home():
     
     temp.reverse()
     humid.reverse()
-    temp = temp[: min(10, len(temp))]
-    humid = humid[: min(10, len(humid))]
+    temp = temp[: min(12, len(temp))]
+    humid = humid[: min(12, len(humid))]
     labels = [i for i in range(1, len(temp)+1)]
     # render 'index.html'
     # latest_tem and latest_humid are passed to html page to show the latest values

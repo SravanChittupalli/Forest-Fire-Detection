@@ -57,6 +57,9 @@
     width: 60px;
     padding: 10px;
   }
+  canvas{
+    margin: 40px auto;
+  }
 </style>
 {% endblock %}
 
@@ -82,7 +85,7 @@
       </div>
     </div>
     <div class="graph">
-      <canvas id= "lineChart" width="1000" height="400"></canvas>
+      <canvas id= "lineChart" width="1100" height="500"></canvas>
       <script>
         var ctx = document.getElementById("lineChart").getContext("2d");
         var linechart = new Chart(ctx, {
@@ -140,7 +143,7 @@
         </tr>
     </thead>
     <tbody>
-        {% for i in range(0,10): %}
+        {% for i in range(0,12): %}
         <tr>
             <td>{{ i+1 }}</td>
             <td>{{ temp[(i)] }}</td>
