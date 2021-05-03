@@ -50,40 +50,6 @@ def home():
     # latest_tem and latest_humid are passed to html page to show the latest values
     return render_template("index.html", latest_temp = temp[0], latest_humid = humid[0], temp_list = temp, humid_list = humid,
                             temp=temp,humid=humid, labels = labels,fire=fire)
-    
-@app.route('/plot.png')
-def plot_png():
-    fig = create_figure()
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype = 'image/png')
-
-def create_figure():
-    info = db.child("Test").child("Data").get().val()
-    temp=[]
-    for i in info.items():
-        temp.append(i[1]["Temperature"])
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    xs = [i for i in range(len(temp))]
-    axis.plot(xs, temp)
-    return fig
-
-@app.route('/tempreture')
-def tempreture():
-    info = db.child("Test").child("Data").get().val()
-    temp=[]
-    for i in info.items():
-        temp.append(i[1]["Temperature"])
-    return render_template("tempreture.html", temp = temp)
-
-@app.route('/humidity')
-def humidity():
-    info = db.child("Test").child("Data").get().val()
-    humid=[]
-    for i in info.items():
-        humid.append(i[1]["Humidity"])
-    return render_template("humidity.html", humid = humid)
 
 if __name__ == "__main__":
     app.run(debug=True)
