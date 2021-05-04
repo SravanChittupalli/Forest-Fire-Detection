@@ -2,10 +2,17 @@
 
 // SimpleTx - the master or the transmitter
 
+//Libraries
+#include <DHT.h>;
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
+
+//Constants
+#define DHTPIN 4     // what pin we're connected to
+#define DHTTYPE DHT22   // DHT 22  (AM2302)
+DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
 
 #define CE_PIN   7
 #define CSN_PIN 8
@@ -26,6 +33,9 @@ unsigned long txIntervalMillis = 1000; // send once per second
 void setup() {
 
     Serial.begin(9600);
+    
+    //starting dht
+    dht.begin();
 
     Serial.println("SimpleTx Starting");
 
@@ -73,12 +83,15 @@ void send() {
 
 void updateMessage() {
     // so you can see that new data is being sent
-    String randomTemp = String(random(20, 99)); 
-    String randomHumid = String(random(20, 99));
-    
-    dataToSend[0] = randomTemp[0];
-    dataToSend[1] = randomTemp[1];
+    //String randomTemp = String(random(20, 99)); 
+    //String randomHumid = String(random(20, 99));
 
-    dataToSend[2] = randomHumid[0];
-    dataToSend[3] = randomHumid[1];
+    String hum = String((int)dht.readHumidity());
+    String temp= String((int)dht.readTemperature());
+    
+    dataToSend[0] = temp[0];
+    dataToSend[1] = temp[1];
+
+    dataToSend[2] = hum[0];
+    dataToSend[3] = hum[1];
 }

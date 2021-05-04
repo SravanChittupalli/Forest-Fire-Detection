@@ -146,8 +146,8 @@
         {% for i in range(0,12): %}
         <tr>
             <td>{{ i+1 }}</td>
-            <td>{{ temp[(i)] }}</td>
-            <td>{{ humid[(i)] }}</td>
+            <td>{{ temp[-(i+1)] }}</td>
+            <td>{{ humid[-(i+1)] }}</td>
         </tr>
         {% endfor %}
     </tbody>

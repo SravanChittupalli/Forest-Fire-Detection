@@ -9,14 +9,14 @@ temp=[]
 humid=[]
 
 config={
-    "apiKey": "AIzaSyB1ka_mJvweWWDEDeOzvKPZ2Y1ydbVVk58",
-    "authDomain": "test-b5397.firebaseapp.com",
-    "databaseURL": "https://test-b5397-default-rtdb.firebaseio.com",
-    "projectId": "test-b5397",
-    "storageBucket": "test-b5397.appspot.com",
-    "messagingSenderId": "603558314359",
-    "appId": "1:603558314359:web:5f651d283ac168ce972172",
-    "measurementId": "G-SGWRCHF03D"
+    "apiKey": "AIzaSyDGLoCJ_PIkygy3desRgyH5nrW6P3cNmzM",
+    "authDomain": "forestfire-6a920.firebaseapp.com",
+    "databaseURL": "https://forestfire-6a920-default-rtdb.firebaseio.com",
+    "projectId": "forestfire-6a920",
+    "storageBucket": "forestfire-6a920.appspot.com",
+    "messagingSenderId": "505023163415",
+    "appId": "1:505023163415:web:89672542cd461fc9064052",
+    "measurementId": "G-R30B36BQH4"
 }
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
@@ -45,11 +45,13 @@ def home():
     humid.reverse()
     temp = temp[: min(12, len(temp))]
     humid = humid[: min(12, len(humid))]
+    temp.reverse()
+    humid.reverse()
     labels = [i for i in range(1, len(temp)+1)]
     # render 'index.html'
     # latest_tem and latest_humid are passed to html page to show the latest values
     return render_template("index.html", latest_temp = temp[0], latest_humid = humid[0], temp_list = temp, humid_list = humid,
-                            temp=temp,humid=humid, labels = labels,fire=fire)
+                            temp=temp, humid=humid, labels = labels, fire=fire)
 
 if __name__ == "__main__":
     app.run(debug=True)

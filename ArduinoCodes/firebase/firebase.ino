@@ -22,12 +22,12 @@
 #define WIFI_PASSWORD "izukuMidoria"
 
 /* 2. Define the Firebase project host name and API Key */
-#define FIREBASE_HOST "https://test-b5397-default-rtdb.firebaseio.com/"
-#define API_KEY "AIzaSyB1ka_mJvweWWDEDeOzvKPZ2Y1ydbVVk58"
+#define FIREBASE_HOST "https://forestfire-6a920-default-rtdb.firebaseio.com/"
+#define API_KEY "AIzaSyDGLoCJ_PIkygy3desRgyH5nrW6P3cNmzM"
 
 /* 3. Define the user Email and password that alreadey registerd or added in your project */
-#define USER_EMAIL "essProjectFire@gmail.com"
-#define USER_PASSWORD "ESSPROJECT"
+#define USER_EMAIL "forestfireess@gmail.com"
+#define USER_PASSWORD "forestfireessgroup15"
 
 //Define Firebase Data object
 FirebaseData fbdo;
