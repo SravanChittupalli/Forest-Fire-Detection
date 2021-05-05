@@ -93,7 +93,7 @@ The project is split into four sub-modules for step by step development and impl
 ### Built With
 
 The repo is partially in [Python and HTML](https://www.python.org/). We will only be using the following libraries:-
-[Flask] : Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+*[Flask](https://flask.palletsprojects.com/) : Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
 
 
 <!-- GETTING STARTED -->
