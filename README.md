@@ -76,7 +76,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is in accordance with the UNSDG Goal 13: Climate Change & Goal 15: Forest and Biodiversity. The motive of choosing the project for detection of forest fires is to overcome the demerits present in the existing technologies of MODIS and Basic Wireless Sensor Network based Forest Fire Detection Systems. Hence we are developing a more robust and reliable system.
+The project is in accordance with the UNSDG Goal 13: Climate Change & Goal 15: Forest and Biodiversity. 2019 was the second warmest year on record and the end of the warmest decade (2010- 2019) ever recorded. Carbon dioxide (CO2) levels and other greenhouse gases rose to new records in 2019. Climate change is not on pause. Weather patterns are changing, sea levels are rising, and weather events are becoming more extreme.
+The motive of choosing the project for detection of forest fires is to overcome the demerits present in the existing technologies of MODIS and Basic Wireless Sensor Network based Forest Fire Detection Systems. Hence we are developing a more robust and reliable system.
 The project is split into three sub-modules for step by step development and implementation. 
   1) Forest Area Module
   2) Data Transfer Module
