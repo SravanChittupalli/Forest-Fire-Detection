@@ -103,7 +103,11 @@ We take the readings every 15 seconds. Now we need a good way to visualize the r
 
 <p align="center">
   <img src="assets/transmitter.png" width="450" height="450" title="transmitter">
+  <p align="center">Transmitter</p>
+  <br>
+  <br>
   <img src="assets/receiver.png" width="450" height="450" alt="receiver">
+  <p align="center">Receiver</p>
 </p>
 
 Hardware components used for the project: 
