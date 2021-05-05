@@ -110,6 +110,7 @@ We take the readings every 15 seconds. Now we need a good way to visualize the r
   <br>
   <img src="assets/receiver.png" width="450" height="450" alt="receiver">
   <p align="center">Receiver</p>
+  <br>
 </p>
 
 Hardware components used for the project: 
@@ -130,6 +131,7 @@ Hardware components used for the project:
 
 <p align="center">
   <img src="assets/webapp.png" width="90%" height="450" title="flowchart">
+  <br>
 </p>
 
 Libraries used to make the web application:
