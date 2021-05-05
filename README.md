@@ -92,15 +92,25 @@ The project is split into four sub-modules for step by step development and impl
 
 ### Built With
 
-The repo is partially in [Python and HTML](https://www.python.org/). We will only be using the following libraries:-
-*[Flask](https://flask.palletsprojects.com/) : Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+The repo is made with Python, Javascript, HTML and C++. We have included the following libraries:-
+
+* [Flask](https://flask.palletsprojects.com/): Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+* [Pyrebase](https://github.com/thisbejim/Pyrebase): A simple python wrapper for the Firebase API.
+* [Chart.js](https://www.chartjs.org/): Simple yet flexible JavaScript charting for designers & developers.
+
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Hardware Components: - 
+  1) 1 DHT22 Temperature & Humidity Sensor
+  2) 2 x Arduino Uno
+  3) 2 x nRF24L01 Transreceiver Module
+  4) Jumper Wires
+  5) Breadboard
+  6) 1 x ESP8266
+  
 
 ### Prerequisites
 
