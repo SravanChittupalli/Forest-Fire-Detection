@@ -67,6 +67,7 @@
       </ul>
     </li>
     <li><a href="#setting-up">Setting Up</a></li>
+    <li><a href="#further-development">Further Development</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -161,6 +162,8 @@ Libraries used to make the web application:
 5. To run the web application:  
   Install the necessary libraries. Then run using `python app.py`
 
+## Further Development
+The webapp made is a 
 
 
 <!-- LICENSE -->
