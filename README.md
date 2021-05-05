@@ -107,23 +107,23 @@ We take the readings every 15 seconds. Now we need a good way to visualize the r
 </p>
 
 Hardware components used for the project: 
-  1) 2 x Arduino Uno:
+  1) 2 x Arduino Uno:  
   The Arduino Uno is an open-source microcontroller board based on the Microchip ATmega328P microcontroller and developed by Arduino.cc. We are using this to collect data from DHT22 module, send and receive data to and from NRF24 module.
 
-  2) 1 x DHT22 Temperature & Humidity Sensor: 
+  2) 1 x DHT22 Temperature & Humidity Sensor:   
   The DHT22 is a basic, low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin (no analog input pins needed). It's fairly simple to use, but requires careful timing to grab data. The only real downside of this sensor is you can only get new data from it once every 2 seconds
 
-  3) 2 x nRF24L01 Transreceiver Module:
+  3) 2 x nRF24L01 Transreceiver Module:  
   As we know there is no network coverage in the forest area so we cannot use direct ip based data transmission techniques. Hence we are using NRF24 module. Using these we are able to communicate with each other wirelessly over a distance. The nRF24L01+ transceiver module is designed to operate in 2.4 GHz worldwide ISM frequency band and uses GFSK modulation for data transmission. The data transfer rate can be one of 250kbps, 1Mbps and 2Mbps. We will be using the 250kbps rate of transfer as it provides the longest range. 
 
-  4) 1 x LoLin NodeMCU:
+  4) 1 x LoLin NodeMCU:  
   LoLin board comes ith built-in wifi. We are using the wifi capabilities of the LoLin board to push the data received by the NRF24 module to a real time data base. 
 
 
 ### Software Side
 
 <p align="center">
-  <img src="assets/webapp.png" width="80%" height="650" title="flowchart">
+  <img src="assets/webapp.png" width="90%" height="450" title="flowchart">
 </p>
 
 Libraries used to make the web application:
