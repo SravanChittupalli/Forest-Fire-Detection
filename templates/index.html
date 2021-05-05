@@ -47,6 +47,9 @@
   .tools{
     display: flex;
     justify-content: space-around;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
     /* border: 1px solid grey; */
   }
   .tools-item{
@@ -60,13 +63,20 @@
   canvas{
     margin: 40px auto;
   }
+  .red{
+    background-color: #ffcdd2;
+  }
+  .green{
+    background-color: #c8e6c9;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="flex-container">
   <div class="flex-container-graph-item">
-    <div class="tools">
+    {% if fire > 50 : %}
+    <div class="tools red">
       <div class="tool-item">
         <img class="img" src="../static/css/images/temp (1).png">
         <p>Tempreture: {{ latest_temp }}</p>
@@ -77,13 +87,28 @@
       </div>
       <div class="tool-item">
         <p style="padding: 10px;">Chances of Fire</p>
-        {% if fire > 50 : %}
         <p class="danger">Fire Detected</p>
-        {% else: %}
-        <p class="safe">No Fire Detected</p>
-        {% endif %}
       </div>
     </div>
+
+    {% else: %}
+    <div class="tools green">
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/temp (1).png">
+        <p>Tempreture: {{ latest_temp }}</p>
+      </div>
+      <div class="tool-item">
+        <img class="img" src="../static/css/images/hum.png">
+        <p>Humidity: {{ latest_humid }}</p>
+      </div>
+      <div class="tool-item">
+        <p style="padding: 10px;">Chances of Fire</p>
+        <p class="safe">No Fire Detected</p>
+      </div>
+    </div>
+    {% endif %}
+
+    
     <div class="graph">
       <canvas id= "lineChart" width="1100" height="500"></canvas>
       <script>
@@ -133,7 +158,7 @@
     </div>
   </div>
 <div class="flex-container-table-item">
-  <h5>Data Examples</h5>
+  <h5>History</h5>
   <table>
     <thead>
         <tr>

@@ -50,7 +50,7 @@ def home():
     labels = [i for i in range(1, len(temp)+1)]
     # render 'index.html'
     # latest_tem and latest_humid are passed to html page to show the latest values
-    return render_template("index.html", latest_temp = temp[0], latest_humid = humid[0], temp_list = temp, humid_list = humid,
+    return render_template("index.html", latest_temp = temp[-1], latest_humid = humid[-1], temp_list = temp, humid_list = humid,
                             temp=temp, humid=humid, labels = labels, fire=fire)
 
 if __name__ == "__main__":
